@@ -11,6 +11,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
@@ -32,37 +33,208 @@
 
     <!-- Wrapper -->
 
-
-
     <section id="main" class="wrapper">
-        <h1>Exploratory Data Analysis</h1>
+        <h1>Data Wrangling</h1>
         <div class="inner">
-            <h1 class="major">Dunes Sales Analysis</h1>
-            <span class="image fit"><img src="images/EDA_1.png" alt="" /></span>
-            <p>EDA consists of Data Cleaning (Feature Engineering, identifying and dealing with missing data) Univariate, Bivariate, and Multivariate Analysis, and obtaining insights.</p>
-            <p>The dataset consists of the following parameters:
+            <h1 class="major">Data Wrangling in Python: Case Study of Netflix</h1>
+            <h3>Introduction</h3>
+            <p>According to <a href="https://www.ibm.com/think/topics/data-wrangling">IBM</a>, data wrangling is the process of cleaning, structuring, and enriching raw data to be used in data science, machine learning (ML), and other data-driven applications.
+                It addresses data quality issues such as missing values, duplicates, outliers, and formatting inconsistencies. </p>
+            <h3>Objectives</h3>
+            <ul class="list-item">
+                <i class="fas fa-check-circle"></i>Loading the Netflix dataset from a CSV file and exploring its structure using pandas</br>
+                <i class="fas fa-check-circle"></i>Perform data discovery to assess data types, missing values, and quality issues</br>
+                <i class="fas fa-check-circle"></i>Clean the dataset by handling duplicates, missing values, and formatting inconsistencies</br>
+                <i class="fas fa-check-circle"></i>Transform and enrich the dataset using techniques like filtering, sorting, grouping, and feature extraction<br>
+                <i class="fas fa-check-circle"></i>Validate the final dataset by checking consistency, completeness, and logical accuracy<br>
+                <i class="fas fa-check-circle"></i>Export the final cleaned dataset to a .csv file ready for analysis or visualization<br>
+                <!-- <i class="fas fa-check-circle"></i><br> -->
+            </ul>
+            <p>
+                Data wrangling process include:
                 <ul>
-                    <li>Date</li>
-                    <li>Customer</li>
-                    <li>Sales Person</li>
-                    <li>Customer_Age</li>
-                    <li>Customer_Gender</li>
-                    <li>State</li>
-                    <li>Product_Category</li>
-                    <li>Sub_Category</li>
-                    <li>Payment Option</li>
-                    <li>Quantity</li>
-                    <li>Unit_Cost</li>
-                    <li>Unit_Price</li>
+                    <i class="fas fa-check-square"></i>Discovering<br>
+                    <i class="fas fa-check-square"></i>Structuring<br>
+                    <i class="fas fa-check-square"></i>Cleaning<br>
+                    <i class="fas fa-check-square"></i>Enriching<br>
+                    <i class="fas fa-check-square"></i>Validating<br>
                 </ul>
             </p>
-            <p>For further <b>Dunes</b> EDA insights, <a href="https://github.com/chemutai254/ML_Projects/blob/main/EDA/Dune_Sales_Analysis.ipynb"><b>Click Here</b></a>.</p>
+
+            <p>The Netflix dataset was wrangled by adhering to the data wrangling process: discovering, structuring, cleaning, enriching, and validation. The discovering process entailed the querying of data to identify discrepancies. There was presence
+                of missing values in director, cast, country, date_added, rating, and duration columns. The percentage of missing values in each column include director - 29.90%, cast - 9.37%, country - 9.43%, date_added - 0.11%, rating: - 0.05%, and
+                duration - 0.03%. The column date_added was a string instead of a datetime datatype. In structuring stage, the date_added column was converted to datetime datatype from a string. The duration column was also split into two columns namely
+                duration_value and duration_unit where the value took a numeric datatype and unit a string. During cleaning, the description column was dropped since it was rendered irrelevant in the analysis. The missing columns director, cast, and country
+                were imputed whereby the missing values were filled in relation to each other. The three columns accounted for a reasonable percentage thus could not be dropped. However, the date_added, rating, and duration missing values were dropped
+                since they could not impact the dataset. Enriching was done to ensure that the data utilized was within range i.e. after 1997. Thereafter, validation was conducted to ensure that the above-mentioned discrepancies were handled. The clean
+                dataset was exported as a .csv file as seen in this <a href="https://www.kaggle.com/code/chemutai254/netflix-data-wrangling"><i>link</i></a></p>
         </div>
+
     </section>
 
     <section id="main" class="wrapper">
+        <h1>Exploratory Data Analysis (EDA)</h1>
+
+        <!-- <div class="features"> -->
         <div class="inner">
-            <h1 class="major">Exploratory Data Analysis on Soran Automobiles Data </h1>
+            <h1 class="major">Titanic Exploratory Data Analysis</h1>
+            <h2>History of the Titanic</h2>
+            <p>The RMS Titanic was a British cruise ship that sank on April 15, 1912, during its maiden voyage from Southampton, England, to New York City. It was the largest ship in the world at the time, measuring 882 feet long and 92 feet wide, and displacing
+                52,310 long tons. The Titanic departed from Southampton on April 10, 1912, stopping at the French port of Cherbourg and the Irish port of Queenstown to pick up more passengers before setting off across the Atlantic Ocean. Despite receiving
+                several ice warnings, the Titanic continued at full speed, and at 11 p.m. on April 14, 1912, lookout Fred Fleet spotted an iceberg dead ahead. First Officer William Murdoch ordered the ship turned hard to port and signaled the engine room
+                to reverse direction, but the ship was too large, moving too fast, and the iceberg was too close. The Titanic struck the iceberg, causing several compartments to begin filling with water. The ship’s design included a double-hull and 16
+                watertight compartments sealed by massive doors that could be instantly triggered by a single electric switch on the bridge or automatically by electric water-sensors. However, the ship was not designed to withstand a collision that would
+                flood more than four compartments, and the iceberg had caused five compartments to begin filling with water. The ship began to sink, and the crew began to get people aboard the lifeboats. There were not enough lifeboats for all the passengers,
+                and many left the Titanic only half full. The Titanic sank at 2 a.m. on April 15, 1912, with approximately 1,500 people still on board. The disaster led to the establishment of the International Ice Patrol and the first International Convention
+                for Safety of Life at Sea, which required every ship to have lifeboat space for each person embarked, hold lifeboat drills, and maintain a 24-hour radio watch.</p>
+            <h3>Objective</h3>
+            <p>To conduct an Exploratory Data Analysis on the Titanic dataset. This includes Univariate, Bivariate, Multivariate, Outlier, and Target Analysis of the data. The dataset was obtained from this <a href="https://www.kaggle.com/code/mariyamalshatta/masterclass-1-a-comprehensive-guide-for-eda"><i>link</i></a></p>
+
+
+            <p>
+                <h3>Data Dictionary</h3>
+                <table border="1" style="border-width: 2px">
+                    <thead>
+                        <tr>
+                            <th>Feature Name</th>
+                            <th>Description</th>
+                            <th>Category (Optional)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PassengerId</td>
+                            <td>Unique identifier of the passenger</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Survived</td>
+                            <td>Survival</td>
+                            <td>0 = No, 1 = Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Pclass</td>
+                            <td>Ticket class</td>
+                            <td>1 = Upper, 2 = Middle, 3 = Lower</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>Name of the passenger</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sex</td>
+                            <td>Gender of the passenger</td>
+                            <td>male, female</td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td>Age in years</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SibSp</td>
+                            <td>Number of siblings / spouses aboard the Titanic</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Parch</td>
+                            <td>Number of parents / children aboard the Titanic</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ticket</td>
+                            <td>Ticket number</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Fare</td>
+                            <td>Passenger fare</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cabin</td>
+                            <td>Cabin number</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Embarked</td>
+                            <td>Port of Embarkation</td>
+                            <td>Southampton (S), Cherbourg (C), Queenstown (Q)</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </p>
+            <p>The image below shows the relationship between <i>Passenger Class</i>, <i>Sex</i>, and <i>Survival</i>. Majority of passengers who survived the accident were in 1st class compared to 2nd and 3rd classes. 3rd class experiences the highest death
+                rates.
+            </p>
+            <span class="image fit"><img src="images/PClassSexTarget.png" alt="" /></span>
+
+            <h3>Outlier Handling</h3>
+            <p>
+                Outliers cannot be removed because:
+                <ul class="list-item">
+                    <i class="fas fa-check-square"></i>It can lead to loss of valuable information, distorting the dataset and/or tampering with the integrity of the data</br>
+                    <i class="fas fa-check-square"></i>It can be used to detect rare events such as elderly surviving the titanic accident as seen in the dataset</br>
+                    <i class="fas fa-check-square"></i>It can be used to improve predictions during modeling in future and support insights</br>
+                    <i class="fas fa-check-square"></i>It can introduce biasness in the dataset especially if the outlier is meaningful and not an error, or processing</br>
+                </ul>
+            </p>
+            <h3>Conclusion</h3>
+            <p>61.62% of the population succumbed to the accident compared to 38.38% who survived. Majority of passengers who boarded the titanic were between the age of 20 and 40 accounting for the young adults in the population. Majority of passengers
+                in the 3rd class died compared to 1st and 2nd class. Majority of men succumbed to the accident compared to women. Majority of the passengers who succumbed to the accident were destined for Southampton port. However, there was an exception
+                case of an elderly who survived accident that need to be looked into</p>
+            <p>For further <b>Titanic</b> EDA insights, <a href="https://chemutai254.github.io/posts/Titanic-EDA/"><i>Click Here</i></a></p>
+
+        </div>
+        <!-- </div> -->
+
+        <!-- <div class="features"> -->
+        <div class="inner">
+            <h1 class="major">Dunes Sales Exploratory Data Analysis</h1>
+
+            <p>EDA consists of Data Cleaning (Feature Engineering, identifying and dealing with missing data) Univariate, Bivariate, and Multivariate Analysis, and obtaining insights.</p>
+            <p>The dataset consists of the following parameters:
+                <ul class="list-item">
+                    <i class="fas fa-check-square"></i>Date<br>
+                    <i class="fas fa-check-square"></i>Customer<br>
+                    <i class="fas fa-check-square"></i>Sales Person<br>
+                    <i class="fas fa-check-square"></i>Customer_Age<br>
+                    <i class="fas fa-check-square"></i>Customer_Gender<br>
+                    <i class="fas fa-check-square"></i>State<br>
+                    <i class="fas fa-check-square"></i>Product_Category<br>
+                    <i class="fas fa-check-square"></i>Sub_Category<br>
+                    <i class="fas fa-check-square"></i>Payment Option<br>
+                    <i class="fas fa-check-square"></i>Quantity<br>
+                    <i class="fas fa-check-square"></i>Unit_Cost<br>
+                    <i class="fas fa-check-square"></i>Unit_Price<br>
+                </ul>
+            </p>
+            <span class="image fit"><img src="images/EDA_1.png" alt="" /></span>
+
+            <p>For further <b>Dunes</b> EDA insights, <a href="https://github.com/chemutai254/ML_Projects/blob/main/EDA/Dune_Sales_Analysis.ipynb"><b>Click Here</b></a>.</p>
+        </div>
+        <!-- </div> -->
+    </section>
+
+    <!-- <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>
+    <i class="fas fa-check-square"></i></br>-->
+
+    <section id="main" class="wrapper">
+        <!-- <div class="features"> -->
+        <div class="inner">
+            <h1 class="major">Soran Automobiles Exploratory Data Analysis </h1>
             <span class="image fit"><img src="images/EDA_2.png" alt="" /></span>
             <h3>About Soran Automobiles</h3>
             <p>Soran Automobiles is an automobile company that specializes in providing high-quality vehicles to customers worldwide. With a focus on innovation and customer satisfaction, Soran Automobiles has become a leading brand in the industry. At Soran
@@ -70,38 +242,78 @@
                 technology and safety features to ensure a comfortable and secure driving experience.</p>
             <h3>Problem Overview</h3>
             <p>The company director is seeking to gain valuable insights that can help:</p>
-            <ul>
-                <li>Identify popular car models and types.</li>
-                <li>Understand customer preferences.</li>
-                <li>Optimize pricing strategies.</li>
-                <li>Improve after-sales services and support.</li>
+            <ul class="list-item">
+                <i class="fas fa-check-circle"></i>Identify popular car models and types</br>
+                <i class="fas fa-check-circle"></i>Understand customer preferences</br>
+                <i class="fas fa-check-circle"></i>Optimize pricing strategies</br>
+                <i class="fas fa-check-circle"></i>Improve after-sales services and support</br>
             </ul>
-            <p></p>
+
             <p>The Director believes that that the analysis will help them make data-driven decisions and take business to the next level. EDA consists of Feature Engineering, identifying and dealing with missing data, and eliminating duplicates. The dataset
                 consists of the following parameters:
-                <ul>
-                    <li>car: Name or brand of the car.</li>
-                    <li>price: The price of the car in the local currency.</li>
-                    <li>body: The type of the car's body (e.g., sedan, hatchback, crossover, etc.).</li>
-                    <li>mileage: The distance the car has traveled in kilometers.</li>
-                    <li>engV: The engine volume of the car in liters.</li>
-                    <li>engType: The type of engine used in the car (e.g., gasoline, diesel, electric, etc.).</li>
-                    <li>registration: Whether the car has been registered with the local authorities or not.</li>
-                    <li>year: The year when the car was manufactured.</li>
-                    <li>model: The model's name or number of the car.</li>
-                    <li>drive</li>
-                    <li>car_age</li>
+                <ul class="list-item">
+                    <i class="fas fa-check-square"></i>car: Name or brand of the car<br>
+                    <i class="fas fa-check-square"></i>price: The price of the car in the local currency<br>
+                    <i class="fas fa-check-square"></i>body: The type of the car's body (e.g., sedan, hatchback, crossover, etc.)<br>
+                    <i class="fas fa-check-square"></i>mileage: The distance the car has traveled in kilometers<br>
+                    <i class="fas fa-check-square"></i>engV: The engine volume of the car in liters<br>
+                    <i class="fas fa-check-square"></i>engType: The type of engine used in the car (e.g., gasoline, diesel, electric, etc.)<br>
+                    <i class="fas fa-check-square"></i>registration: Whether the car has been registered with the local authorities or not<br>
+                    <i class="fas fa-check-square"></i>year: The year when the car was manufactured<br>
+                    <i class="fas fa-check-square"></i>model: The model's name or number of the car<br>
+                    <i class="fas fa-check-square"></i>drive<br>
+                    <i class="fas fa-check-square"></i>car_age<br>
                 </ul>
             </p>
-            <p>For further <b>Soran Automobiles Analysis</b>, <a href="https://github.com/chemutai254/ML_Projects/blob/main/EDA/SoranAutomobiles.ipynb"><b>Click Here</b></a>.</p>
+            <p>For further <b>Soran Automobiles Analysis</b>, <a href="https://github.com/chemutai254/ML_Projects/blob/main/EDA/SoranAutomobiles.ipynb"><b>Click Here</b></a></p>
         </div>
+        <!-- </div> -->
     </section>
 
     <section id="main" class="wrapper">
         <h1>Visualization</h1>
+        <!-- <div class="features"> -->
+        <div class="inner">
+            <h1 class="major">Qlik HR Dashboard using Tableau</h1>
+            <!-- <span class="image fit"><img src="images/EDA_0.png" alt="" /></span> -->
+            <p>This project aims at analyzing and visualizing a dashboard that will be used by the HR department to make decisions. The dataset was obtained from this <a href="https://www.datawithbaraa.com/tableau/tableau-hr-project-thank-you/"><b>link</b></a>,
+                customized to the Kenyan context</p>
+            <h3>Objectives</h3>
+            <ul class="list-item">
+                <i class="fas fa-check-circle"></i>Understand the business and client needs<br>
+                <i class="fas fa-check-circle"></i>Load & Transform Data<br>
+                <i class="fas fa-check-circle"></i>Create Calculated Measures<br>
+                <i class="fas fa-check-circle"></i>Build Summary Dashboard<br>
+            </ul>
+            <p>EDA was performed on a dataset containing employement data from Qlik. The dataset includes various features such as employee demographics, job titles, departments, and performance ratings. The goal is to gain insights into the employee performance,
+                demographics, and trends to inform HR decisions.</p>
+            <p>The dataset consists of the following 15 features:
+                <ul class="list-item">
+                    <i class="fas fa-check-square"></i>employee_id<br>
+                    <i class="fas fa-check-square"></i>first_name<br>
+                    <i class="fas fa-check-square"></i>last_name<br>
+                    <i class="fas fa-check-square"></i>gender<br>
+                    <i class="fas fa-check-square"></i>state<br>
+                    <i class="fas fa-check-square"></i>city<br>
+                    <i class="fas fa-check-square"></i>hiredate<br>
+                    <i class="fas fa-check-square"></i>department<br>
+                    <i class="fas fa-check-square"></i>job_title<br>
+                    <i class="fas fa-check-square"></i>education_level<br>
+                    <i class="fas fa-check-square"></i>salary<br>
+                    <i class="fas fa-check-square"></i>performance_rating<br>
+                    <i class="fas fa-check-square"></i>overtime<br>
+                    <i class="fas fa-check-square"></i>birthdate<br>
+                    <i class="fas fa-check-square"></i>termdate<br>
+                </ul>
+            </p>
+            <img src="images/HR_Dashboard.png" alt="Qlik HR Dashboard" />
+            <p>For further <b>Qlik</b> EDA insights, <a href="https://chemutai254.github.io/posts/Intro-to-Tableau/"><i>Click here</i></a>
+            </p>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="features"> -->
         <div class="inner">
             <h1 class="major">Data Analysis using Tableau: Dula Chains Supply Chain Case Study </h1>
-            <span class="image fit"><img src="images/DulaChain.png" alt="" /></span>
             <h3>About Dula Chains</h3>
             <p>DulaChains Solution is a leading global retail supply chain business revolutionizing how products are sourced and delivered worldwide. With our unwavering commitment to excellence, innovation, and sustainability, we provide end-to-end supply
                 chain solutions that empower retailers, manufacturers, and suppliers to thrive in an ever- evolving marketplace. Our global reach spans across continents, connecting diverse markets and bridging the gap between suppliers and retailers.
@@ -115,78 +327,89 @@
                     effective strategies to implement process improvements and proactively address potential issues before they impact the company's performance.
                 </p>
                 DulaChain seeks to leverage on their data resources to uncover patterns and trends of their supply chain operations by:
-                <ul>
-                    <li>Understanding its Profits trends.</li>
-                    <li>Predicting future profit trend.</li>
+                <ul class="list-item">
+                    <i class="fas fa-check-circle"></i>Understanding its Profits trends</br>
+                    <i class="fas fa-check-circle"></i>Understanding its Profits trends</br>
                 </ul>
                 The dataset consists of the following parameters:
-                <ul>
-                    <li>Customer ID – Unique Customer identification</li>
-                    <li>Customer Market- Geographic grouping of customer countries</li>
-                    <li>Customer Region – Geographic grouping of customer countries</li>
-                    <li>Customer Country- Customer’s country</li>
-                    <li>Order ID – Unique Order Identification. Order groups one or multiple Order Items</li>
-                    <li>Order Item ID – Unique Order Item Identification</li>
-                    <li>Order Year – Year of the order</li>
-                    <li>Order Month – Month of the Order</li>
-                    <li>Order Day – Day of the Order</li>
-                    <li>Order Quantity – The amount of items that were ordered within a given Order Item</li>
-                    <li>Product Category – Product grouping into categories such as Women’s Apparel, etc</li>
-                    <li>Product Name – The name of the purchased product</li>
-                    <li>Shipment Year – Year of the Shipment</li>
-                    <li>Shipment Month – Month of the Shipment</li>
-                    <li>Shipment Day – Day of the Shipment</li>
-                    <li>Shipment Mode – How the Shipment was dispatched (First Class, Same Day, etc)</li>
-                    <li>Shipment Days – Scheduled – Typical amount of days needed to dispatch the goods</li>
-                    <li>Warehouse Country – Country of warehouse that fulfilled the order</li>
-                    <li>Warehouse Inventory – Monthly inventory level of a product</li>
-                    <li>Inventory cost per unit – Monthly storage cost per unit of inventory</li>
-                    <li>Warehouse Order fulfillment (days) – The average amount of days it takes to refill stock if inventory drops below zero</li>
+                <ul class="list-item">
+                    <i class="fas fa-check-square"></i>Customer ID – Unique Customer identification</br>
+                    <i class="fas fa-check-square"></i>Customer Market- Geographic grouping of customer countries</br>
+                    <i class="fas fa-check-square"></i>Customer Region – Geographic grouping of customer countries</br>
+                    <i class="fas fa-check-square"></i>Customer Country- Customer’s country</br>
+                    <i class="fas fa-check-square"></i>Order ID – Unique Order Identification. Order groups one or multiple Order Items</br>
+                    <i class="fas fa-check-square"></i>Order Item ID – Unique Order Item Identification</br>
+                    <i class="fas fa-check-square"></i>Order Year – Year of the order</br>
+                    <i class="fas fa-check-square"></i>Order Month – Month of the Order</br>
+                    <i class="fas fa-check-square"></i>Order Day – Day of the Order</br>
+                    <i class="fas fa-check-square"></i>Order Quantity – The amount of items that were ordered within a given Order Item</br>
+                    <i class="fas fa-check-square"></i>Product Category – Product grouping into categories such as Women’s Apparel, etc</br>
+                    <i class="fas fa-check-square"></i>Product Name – The name of the purchased product</br>
+                    <i class="fas fa-check-square"></i>Shipment Year – Year of the Shipment</br>
+                    <i class="fas fa-check-square"></i>Shipment Month – Month of the Shipment</br>
+                    <i class="fas fa-check-square"></i>Shipment Day – Day of the Shipment</br>
+                    <i class="fas fa-check-square"></i>Shipment Mode – How the Shipment was dispatched (First Class, Same Day, etc)</br>
+                    <i class="fas fa-check-square"></i>Shipment Days – Scheduled – Typical amount of days needed to dispatch the goods</br>
+                    <i class="fas fa-check-square"></i>Warehouse Country – Country of warehouse that fulfilled the order</br>
+                    <i class="fas fa-check-square"></i>Warehouse Inventory – Monthly inventory level of a product</br>
+                    <i class="fas fa-check-square"></i>Inventory cost per unit – Monthly storage cost per unit of inventory</br>
+                    <i class="fas fa-check-square"></i>Warehouse Order fulfillment (days) – The average amount of days it takes to refill stock if inventory drops below zero</br>
                 </ul>
             </p>
+
+            <span class="image fit"><img src="images/DulaChain.png" alt="" /></span>
+
             <h3>Key Findings</h3>
-            <ol>
-                <li>Product Category Performance: Fishing products sold significantly accounting for 22.59% of Gross sales.</li>
-                <li>Sales, Profit, and Order Prediction: The Sales, Profit, and Order trend remained steady between 2015 and 2018, and predicted a significant decrease after 2018 respectively.</li>
-                <li>Shipping Mode Evaluation: Customers preferred Standard Class shipping mode compared to the other existing mode.</li>
-                <li>Profit Evaluation by Country: The USA made the highest profits followed by Mexico and France, compares to other countries.</li>
-                <li>Shipment Delay Prediction: The order delay was predicted to increase in future after 2018. It affects various categories such as orders made on schedule and delivered after the scheduled days, the orders delivered 5 days after the scheduled
-                    day, and orders delivered before the scheduled day. </li>
-            </ol>
+            <ul class="list-item">
+                <i class="fas fa-check-double"></i><i>Product Category Performance</i>: Fishing products sold significantly accounting for 22.59% of Gross sales</br>
+                <i class="fas fa-check-double"></i><i>Sales, Profit, and Order Prediction</i>: The Sales, Profit, and Order trend remained steady between 2015 and 2018, and predicted a significant decrease after 2018 respectively</br>
+                <i class="fas fa-check-double"></i><i>Shipping Mode Evaluation</i>: Customers preferred Standard Class shipping mode compared to the other existing mode</br>
+                <i class="fas fa-check-double"></i><i>Profit Evaluation by Country</i>: The USA made the highest profits followed by Mexico and France, compares to other countries</br>
+                <i class="fas fa-check-double"></i><i>Shipment Delay Prediction</i>: The order delay was predicted to increase in future after 2018. It affects various categories such as orders made on schedule and delivered after the scheduled days,
+                the orders delivered 5 days after the scheduled day, and orders delivered before the scheduled day</br>
+            </ul>
         </div>
+        <!-- </div> -->
     </section>
 
     <section id="main" class="wrapper">
+        <!-- <div class="features"> -->
         <div class="inner">
             <h1 class="major">Data Analysis using Microsoft Excel: Case Study of Sterling E-Commerce</h1>
-            <span class="image fit"><img src="images/Sterling.jpg" alt="" /></span>
+
             <p><b>STERLING E-COMMERCE DASHBOARD</b> with <b>Microsoft Excel</b></p>
             <p>I recently conducted a Sales Analysis using Excel, and I am excited to share my findings.</p>
             <p>
                 <h3>Problem Overview</h3> The management would like to leverage data to gain insights into the business and improve efficiency by:</p>
-            <ul>
-                <li>Understanding customer needs, preferences, and behavior.</li>
-                <li>Identifying any patterns and trends.</li>
-                <li>Helping the management make informed decisions and boost their effectiveness.</li>
-                <li>Understanding their data so they can optimize their product offerings, streamline operations, and enhance the customer experience.</li>
+            <ul class="list-item">
+                <i class="fas fa-check-circle"></i>Understanding customer needs, preferences, and behavior</br>
+                <i class="fas fa-check-circle"></i>Identifying any patterns and trends</br>
+                <i class="fas fa-check-circle"></i>Helping the management make informed decisions and boost their effectiveness</br>
+                <i class="fas fa-check-circle"></i>Understanding their data so they can optimize their product offerings, streamline operations, and enhance the customer experience</br>
             </ul>
+
+            <span class="image fit"><img src="images/Sterling.jpg" alt="" /></span>
+
             <h3>Key Findings</h3>
-            <ol>
-                <li>Sales Trend Analysis: The overall sales trend over the last five years shows a significant increase in revenue compared to the previous period, showing growth for the firm.</li>
-                <li>Sales Distribution by Gender: The sales distribution by gender shows that there is an approximate equilibrium contribution from all genders in terms of revenue generated, but Male customers recorded slightly more orders.</li>
-                <li>Category Performance Overview: The Mobile and Tablets product category has consistently outperformed other products in sales quantity and contributed the highest revenue.</li>
-                <li>Payment Performance Evaluation: Cod (Cash-On-Delivery) and EasyPay are the most preferred payment methods by the customer, accounting for most transactions.</li>
-                <li>Quantity Sales Trend: The quantity of sales shows a significant increase in March and April, then peaks in December.</li>
-            </ol>
+            <ul class="list-item">
+                <i class="fas fa-check-double"></i><i>Sales Trend Analysis</i>: The overall sales trend over the last five years shows a significant increase in revenue compared to the previous period, showing growth for the firm</br>
+                <i class="fas fa-check-double"></i><i>Sales Distribution by Gender</i>: The sales distribution by gender shows that there is an approximate equilibrium contribution from all genders in terms of revenue generated, but Male customers recorded
+                slightly more orders</br>
+                <i class="fas fa-check-double"></i><i>Category Performance Overview</i>: The Mobile and Tablets product category has consistently outperformed other products in sales quantity and contributed the highest revenue</br>
+                <i class="fas fa-check-double"></i><i>Payment Performance Evaluation</i>: Cod (Cash-On-Delivery) and EasyPay are the most preferred payment methods by the customer, accounting for most transactions</br>
+                <i class="fas fa-check-double"></i><i>Quantity Sales Trend</i>: The quantity of sales shows a significant increase in March and April, then peaks in December, showing a seasonal trend in customer purchase behavior</br>
+            </ul>
         </div>
+        <!-- </div> -->
     </section>
 
     <section id="main" class="wrapper">
         <h1>Machine Learning Projects</h1>
+        <!-- <div class="features"> -->
         <div class="inner">
-            <h1 class="major">Heart Disease Prediction</h1>
-            <span class="image fit"><img src="images/heart_disease.png" alt="" /></span>
-            <h2>Heart Disease Prediction using Supervised Learning: Case of Peterside Hospital, Lagos, Nigeria</h2>
+            <h1 class="major">Heart Disease Prediction using Supervised Learning: Case of Peterside Hospital, Lagos, Nigeria</h1>
+
+            <!-- <h2>Heart Disease Prediction using Supervised Learning: Case of Peterside Hospital, Lagos, Nigeria</h2> -->
             <h3>About Peterside Hospital</h3>
             <p>Peterside Hospital is a private hospital located in Lagos, Nigeria. It was founded in 2000 by Dr. Efemena Ikpro, a renowned Nigerian physician. The hospital provides a wide range of medical services, including general medicine, surgery, paediatrics,
                 obstetrics and gynaecology, cardiology, neurology, and oncology. Peterside Hospital is known for its state-of-the-art facilities, modern equipment, and highly skilled medical professionals. The hospital has a team of over 300 medical personnel,
@@ -195,34 +418,38 @@
             <h3>Objective</h3>
             <p>To build a machine-learning model that can predict the likelihood of a person having a heart disease based on the given features.</p>
             <p>The features include:
-                <ul>
-                    <li>age</li>
-                    <li>sex</li>
-                    <li>chest pain type (cp)</li>
-                    <li>resting blood pressure (trestbps)</li>
-                    <li>serum cholesterol (chol)</li>
-                    <li>fasting blood sugar (fbs)</li>
-                    <li>resting electrocardiographic results (restecg)</li>
-                    <li>maximum heart rate achieved (thalach)</li>
-                    <li>exercise-induced angina (exang)</li>
-                    <li>ST depression induced by exercise relative to rest (oldpeak)</li>
-                    <li>the slope of the peak exercise ST segment (slope)</li>
-                    <li>number of major vessels colored by flourosopy (ca)</li>
-                    <li>thalassemia (thal)</li>
-                    <li>target</li>
+                <ul class="list-item">
+                    <i class="fas fa-check-square"></i>age</br>
+                    <i class="fas fa-check-square"></i>sex</br>
+                    <i class="fas fa-check-square"></i>chest pain type (cp)</br>
+                    <i class="fas fa-check-square"></i>resting blood pressure (trestbps)</br>
+                    <i class="fas fa-check-square"></i>serum cholesterol (chol)</br>
+                    <i class="fas fa-check-square"></i>fasting blood sugar (fbs)</br>
+                    <i class="fas fa-check-square"></i>resting electrocardiographic results (restecg)</br>
+                    <i class="fas fa-check-square"></i>maximum heart rate achieved (thalach)</br>
+                    <i class="fas fa-check-square"></i>exercise-induced angina (exang)</br>
+                    <i class="fas fa-check-square"></i>ST depression induced by exercise relative to rest (oldpeak)</br>
+                    <i class="fas fa-check-square"></i>the slope of the peak exercise ST segment (slope)</br>
+                    <i class="fas fa-check-square"></i>number of major vessels colored by flourosopy (ca)</br>
+                    <i class="fas fa-check-square"></i>thalassemia (thal)</br>
+                    <i class="fas fa-check-square"></i>target</br>
                 </ul>
             </p>
+
+            <span class="image fit"><img src="images/heart_disease.png" alt="" /></span>
+
             <p>For further Peterside Hospital Heart Disease Prediction insights <a href="https://github.com/chemutai254/ML_Projects/blob/main/Heart_Disease/Peterside_Hospital_Heart_Disease.ipynb"><b>Click Here</b></a>.</p>
         </div>
+        <!-- </div> -->
     </section>
 
     <section id="main" class="wrapper">
+        <!-- <div class="features"> -->
         <div class="inner">
-            <h1 class="major">Customer Segmentation using Clustering Algorithm K-Means</h1>
+            <h1 class="major">Customer Segmentation using Clustering Algorithm K-Means: Case of Selore Nigeria</h1>
+            <!-- <h2>Customer Segmentation Using Unsupervised Learning Techniques</h2> -->
             <p>K-Means clustering is an unsupervised learning technique that is suitable for working with unlabelled data that lacks predefined categories or groups. The primary objective of this segment is to group similar data points together, with the
                 number of groups determined by the value of K. The algorithm follows an iterative approach and assigns each data point to one of the K groups based on the features that are provided.</p>
-            <span class="image fit"><img src="images/ULKmeans.png" alt="" /></span>
-            <h2>Customer Segmentation Using Unsupervised Learning Techniques: Case of Selore Nigeria</h2>
             <h3>About the business - Selore</h3>
             <p>Selore Nigeria is a popular electronics retail chain in Nigeria that specializes in the sale of mobile phones, tablets, laptops, and other related accessories. The company was founded in 2022 and has since grown to become one of the largest
                 retailers of mobile phones and related products in the country. Selore Nigeria offers a wide range of mobile phones from top brands such as Samsung, Apple, Nokia, and Huawei, among others. The company is also known for its after- sales
@@ -236,47 +463,60 @@
             <p>The goal of this project is to segment customers based on their purchasing behaviour and demographic information. We will use unsupervised learning techniques to identify groups of customers with similar behaviour and characteristics. This
                 information can be used to develop targeted marketing campaigns, personalize product recommendations, and optimize pricing strategies.</p>
             <p>The retail company has collected data on 200 customers containing:
-                <ul>
-                    <li>CustomerID</li>
-                    <li>Gender</li>
-                    <li>Age</li>
-                    <li>Annual_Income_(k$)</li>
-                    <li>Spending_Score.</li>
+                <ul class="list-item">
+                    <i class="fas fa-check-square"></i>CustomerID</br>
+                    <i class="fas fa-check-square"></i>Gender</br>
+                    <i class="fas fa-check-square"></i>Age</br>
+                    <i class="fas fa-check-square"></i>Annual_Income_(k$)</br>
+                    <i class="fas fa-check-square"></i>Spending_Score</br>
                 </ul>
             </p>
+
+            <span class="image fit"><img src="images/ULKmeans.png" alt="" /></span>
+
             <p>For further Selore Customer Segmentation insights <a href="https://github.com/chemutai254/ML_Projects/blob/main/Customer_Segmentation/Customer_Segmentation.ipynb"><b>Click Here</b></a>.</p>
         </div>
+        <!-- </div> -->
     </section>
 
     <div id="wrapper">
         <h1>Computer Vision Projects</h1>
         <!-- Main -->
         <section id="main" class="wrapper">
+            <!-- <div class="features"> -->
             <div class="inner">
                 <h1 class="major">Face, Eyes, and Smile Detection</h1>
-                <span class="image fit"><img src="images/face_eyes_smile_detection.png" alt="" /></span>
+
                 <p>OpenCV is a ML Model used in Face, Eyes, and Smile Detection. </p>
+                <span class="image fit"><img src="images/face_eyes_smile_detection.png" alt="" /></span>
                 <p>For further details on <b>Face, Eyes, and Smile Detection</b> <a href="https://github.com/chemutai254/ML_Projects/blob/main/Computer_Vision/Computer_Vision.ipynb"><b>Click Here</b></a></p>
             </div>
+            <!-- </div> -->
         </section>
 
         <section id="main" class="wrapper">
+            <!-- <div class="features"> -->
             <div class="inner">
                 <h1 class="major">Hand Detection</h1>
-                <span class="image fit"><img src="images/hand_detection_4.png" alt="" /></span>
+
                 <p>MediaPipe Hand Landmarker model is a ML Model that lets you detect the landmarks of the hand in an image.</p>
+                <span class="image fit"><img src="images/hand_detection_4.png" alt="" /></span>
                 <p>To find out more on <b>Hand Detection</b>
                     <a href="https://github.com/chemutai254/ML_Projects/blob/main/Computer_Vision/Hand_Detection.ipynb"><b>Click Here</b></a></p>
             </div>
+            <!-- </div> -->
         </section>
 
         <section id="main" class="wrapper">
+            <!-- <div class="features"> -->
             <div class="inner">
                 <h1 class="major">Pose Detection</h1>
-                <span class="image fit"><img src="images/pose_detection_.png" alt="" /></span>
+
                 <p>MediaPipe is a ML Model that identifies and classifies real-time pose estimation of human body parts and joints of images and videos.</p>
+                <span class="image fit"><img src="images/pose_detection_.png" alt="" /></span>
                 <p>For further details on <b>Pose Detection</b> <a href="https://github.com/chemutai254/ML_Projects/blob/main/Computer_Vision/Pose_Detection.ipynb">Click Here</a></p>
             </div>
+            <!-- </div> -->
         </section>
 
 
